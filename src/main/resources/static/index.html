@@ -1,0 +1,37 @@
+<html>
+<meta charset="UTF-8">
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+<style type="text/css" src="css/common/common.css"></style>
+<body>
+<div id="mangerServers">管理集群</div>
+<div id="createService">创建服务</div>
+</body>
+<script>
+    $('#createService').click(function () {
+        $.ajax({
+            type: 'get',
+            url: 'add',
+            contentType: 'application/text',
+            success: function (res) {
+                $("body").html(res);//
+            },
+            error: function (e) {
+                alert(e)
+            }
+        })
+    });
+    $('#mangerServers').click(function () {
+        $.ajax({
+            type: 'get',
+            url: 'mgrServers',
+            contentType: 'application/text',
+            success: function (res) {
+                $("body").html(res);//
+            },
+            error: function (e) {
+                alert(e)
+            }
+        })
+    });
+</script>
+</html>
